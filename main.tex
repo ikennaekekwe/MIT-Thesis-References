@@ -1,0 +1,129 @@
+% !TEX program = pdflatex
+% !BIB program = biber
+%
+% MIT SDM thesis -- Ikenna Ekekwe
+% Built on the mitthesis class (template v1.21, J. H. Lienhard, CTAN).
+% Items marked [PLACEHOLDER: ...] need your input; everything else is wired and compiles.
+
+\DocumentMetadata{
+  lang        = en-US,
+  pdfversion  = 1.7,
+  pdfstandard = a-2b,   % NOTE: MIT specs ask for PDF/A-1. For final submission, change to: pdfversion=1.4, pdfstandard=a-1b
+}
+
+\documentclass[twoside,fontset=lmodern]{mitthesis}
+
+%%% Packages required by the pandoc-converted chapter bodies %%%
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=0.9\textheight,keepaspectratio}% bound every figure to the text block
+\usepackage{longtable,booktabs,array,calc}
+\usepackage{ragged2e}
+\usepackage{pdflscape}
+\usepackage{float}
+\interfootnotelinepenalty=10000
+\usepackage{multicol}
+\usepackage[nopatch=footnote]{microtype}
+
+%%% pandoc helper macros (so the converted .tex bodies compile) %%%
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\real}[1]{#1}
+\providecommand{\passthrough}[1]{#1}
+
+%%% Bibliography: Harvard-style author-date in-text + reference list %%%
+%%% (switch style=authoryear -> style=apa, with the biblatex-apa package, for strict APA on the final build)
+\usepackage[style=authoryear,giveninits=true,maxbibnames=10,backend=biber,language=american,sorting=nyt,dashed=false]{biblatex}
+\addbibresource{references.bib}
+
+\makeatletter
+\newcommand{\mitappnumberline}[1]{Appendix~#1:\hspace{0.6em}}
+\newcommand{\mitappchapter}[2]{\begingroup\let\numberline\mitappnumberline\mitoriglchapter{#1}{#2}\endgroup}
+\newcommand{\appendixtocsetup}{%
+  \addvspace{1.5em}{\noindent\bfseries\color{Blue3}Appendices\par}\addvspace{0.4em}%
+  \global\let\mitoriglchapter\l@chapter \global\let\l@chapter\mitappchapter
+}
+\makeatother
+
+%%% Landscape page-number fix: upright number at the bottom-center of the landscape view %%%
+\usepackage{eso-pic}
+\newif\ifLSpage \LSpagefalse
+\makeatletter
+\renewcommand{\ps@plain}{\let\@mkboth\@gobbletwo
+  \let\@oddhead\@empty\let\@evenhead\@empty
+  \def\@oddfoot{\reset@font\hfil\ifLSpage\else\thepage\fi\hfil}%
+  \let\@evenfoot\@oddfoot}
+\let\LSP@landscape\landscape \let\LSP@endlandscape\endlandscape
+\renewenvironment{landscape}{\global\LSpagetrue\LSP@landscape}{\LSP@endlandscape\global\LSpagefalse}
+\makeatother
+\pagestyle{plain}
+\AddToShipoutPictureFG{\ifLSpage
+  \put(\LenToUnit{\dimexpr\paperwidth-0.6in\relax},\LenToUnit{0.5\paperheight}){\makebox(0,0){\rotatebox{90}{\thepage}}}\fi}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  TITLE PAGE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Inheriting Hardware Without the System:\\A Sociotechnical Knowledge and Capability Transfer Framework for IOC Asset Divestments}
+
+% \Author{name}{department}[previous degree 1][previous degree 2]
+\Author{Ikenna Ekekwe}{System Design and Management Program}[B. Tech., Rivers State University of Science and Technology, 2008]
+
+% Degree to be awarded (confirm exact wording with SDM)
+\Degree{Master of Science in Engineering and Management}{System Design and Management Program}
+
+% MIT thesis supervisor ONLY here. Industrial supervisor (A. Obembe, Chevron) and COUHES sponsor (D. Rhodes) belong in Acknowledgments.
+\Supervisor{George Lordos, PhD}{Research Scientist and Lecturer, System Design and Management Program and Department of Aeronautics and Astronautics}
+
+% Professor who formally accepts theses for the program (e.g., SDM Director / Graduate Officer)
+\Acceptor{Joan Rubin}{Executive Director}{MIT System Design and Management Program}
+
+% Degree months may be February, May, June, or September only
+\DegreeDate{September}{2026}        % PLACEHOLDER: confirm award month/year
+\ThesisDate{August 7, 2026}
+
+% Optional committee readers page (uncomment and fill if your committee requires it):
+% \Reader{Donna Rhodes}{Title}{Department}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ABSTRACT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The abstract environment supplies the heading, title, author, submission line, and the
+% "Thesis supervisor / Title" block automatically. abstract.tex holds ONLY the abstract text.
+\begin{abstract}
+  \input{abstract.tex}
+\end{abstract}
+
+% acknowledgments page removed at author request (acknowledgement is optional)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  FRONT-MATTER LISTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\listoffigures
+\listoftables
+\include{list_of_acronyms}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  CHAPTERS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  APPENDICES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Next deliverable: reconciliation of Appendices (currently referenced as B, D, E, F, G, H)
+% into a gapless A, B, C... sequence, then \include each here.
+\appendix
+\include{appendixa}
+\include{appendixb}
+\include{appendixc}
+\include{appendixd}
+\include{appendixe}
+\include{appendixf}
+\include{appendixg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  BIBLIOGRAPHY  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Next deliverable: build references.bib and convert the in-text (Author, Year) strings to \parencite{key}.
+\defbibheading{bibintoc}{\chapter*{#1}\addcontentsline{toc}{chapter}{\refname}}
+\nocite{*}
+\printbibliography[title={References},heading=bibintoc]
+
+\end{document}

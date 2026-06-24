@@ -1,0 +1,33 @@
+# Appendix F. Survey Response Data
+
+The structured survey instrument described in Section 3.5 was deployed as an alternative to interviews where scheduling prevented them, addressed to the three participant groups (Group A, IOC sellers; Group B, domestic operators; Group C, regulators). Of eight response records, three were completed. All three came from Group A, IOC sellers in technical or operational roles; the remaining five records comprised one test entry and four submissions abandoned at or below 14 percent progress. The three completed responses are reproduced here in full so that the summaries in Sections 4.7.1 and 4.8 can be read against the underlying evidence. Respondents are de-identified and labeled S1 to S3. Two of the three identified the transaction they were describing as the Shell or SPDC divestment to Renaissance; the third did not disclose a transaction.
+
+**Table F.1. Profile of the three completed respondents. All three are seller-side participants in technical or operational roles; two were describing the Renaissance transaction and one did not disclose a transaction.**
+
+| Respondent | Group | Role | Transaction described | Basis of knowledge | Confidence in ranking |
+|---|---|---|---|---|---|
+| S1 | IOC seller (Group A) | Technical / operational | Not disclosed | Professional knowledge | Fairly confident |
+| S2 | IOC seller (Group A) | Technical / operational | Shell to Renaissance | Directly observed | Fairly confident |
+| S3 | IOC seller (Group A) | Technical / operational | SPDC to Renaissance | Directly observed | Somewhat confident |
+
+**Table F.2. Driver rankings by the three completed respondents, where 1 is the most important factor and the respondent's top-ranked choice is shown in bold. No respondent ranked untransferred capability first; each named a different factor first, and capability placed second, third, and fifth across the three.**
+
+| Factor | S1 | S2 | S3 |
+|---|---|---|---|
+| Untransferred operational capability | 5 | 2 | 3 |
+| Poor coordination during handover | 4 | 3 | 5 |
+| Insufficient capital or financial resources | 6 | **1** | 7 |
+| Unfavorable fiscal terms under the PIA | **1** | 6 | 4 |
+| Weak regulatory oversight | 7 | 5 | 2 |
+| Political interference, security, or oil theft | 2 | 4 | **1** |
+| Asset already aging or in natural decline | 3 | 7 | 6 |
+
+**Table F.3. Counterfactual, policy, and overall-adequacy responses. All three judged that a stronger capability transfer would have improved the outcome, and all three held that capability transfer should be a condition of divestment approval; a capital-only counterfactual drew weaker support.**
+
+| Respondent | Stronger capability transfer would have improved the outcome? | More capital alone would have improved the outcome? | Capability transfer a condition of divestment approval? | Adequacy of the capability transfer observed |
+|---|---|---|---|---|
+| S1 | Yes, somewhat | Yes, somewhat | Strongly recommended | Mostly adequate |
+| S2 | Yes, somewhat | No | Mandatory | Very adequate |
+| S3 | Yes, significantly | Yes, somewhat | Mandatory | Mostly adequate |
+
+The instrument's open-text fields were largely left blank. The one substantive free-text entry came from S2, who, having ranked capital first, explained the choice by reference to the borrowing power of the new owners relative to the financial reserves of the divesting major. The supporting-evidence, disconfirmation, and additional-requirement fields were not completed by any of the three respondents.
